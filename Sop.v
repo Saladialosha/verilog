@@ -1,0 +1,43 @@
+module Sop(a,b,c,y);
+input a,b,c;
+output y;
+supply1 Vdd;
+supply0 Gnd;
+wire w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18;
+not h1(w1,a);
+not h2(w2,b);
+not h3(w3,c);
+pmos p1(w4,Vdd,w1);
+pmos p2(w4,vdd,w2);
+pmos p3(w4,vdd,w3);
+pmos p4(w5,w4,w1);
+pmos p5(w5,w4,b);
+pmos p6(w5,w4,w3);
+pmos p7(w6,w5,w1);
+pmos p8(w6,w5,b);
+pmos p9(w6,w5,c);
+pmos p10(w7,w6,a);
+pmos p11(w7,w6,b);
+pmos p12(w7,w6,w3);
+pmos p13(w18,w7,a);
+pmos p14(w18,w7,b);
+pmos p15(w18,w7,c);
+nmos n1(w8,Gnd,w3);
+nmos n2(w9,w8,w2);
+nmos n3(w18,w9,w1);
+nmos n4(w10,Gnd,w3);
+nmos n5(w11,w10,b);
+nmos n6(w18,w11,w1);
+nmos n7(w12,Gnd,w3);
+nmos n8(w13,w12,b);
+nmos n9(w18,w13,a);
+nmos n10(w14,Gnd,c);
+nmos n11(w15,w14,b);
+nmos n12(w18,w15,w1);
+nmos n13(w16,Gnd,c);
+nmos n14(w17,w16,b);
+nmos n15(w18,w17,a);
+not h4(y,w18);
+endmodule
+
+
